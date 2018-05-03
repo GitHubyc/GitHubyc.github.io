@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>主页</title>
+<!--[if IE 7]>
+    <link href="css/font-awesome-ie7.min.css" rel="stylesheet">
+   <![endif]-->
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!-- 字体图标 -->
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+<!-- NProgress -->
+<link href="../css/nprogress.css" rel="stylesheet">
+<!-- toastr -->
+<link href="../css/toastr.min.css" rel="stylesheet">
+<!-- 公共样式 -->
+<link href="../css/general.css" rel="stylesheet" media="screen">
+<!-- bootstrap-dialog -->
+<link href="../css/bootstrap-dialog.min.css" rel="stylesheet">
+<!-- 选框样式 -->
+<link href="../css/build.css" rel="stylesheet" type="text/css">
+<!-- 主页样式 -->
+<link href="../css/index.css" rel="stylesheet" media="screen">
+<!-- 自定义样式 -->
+<link href="../css/list.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="container">
+	<!-- 头部 -->
+	<div class="content_t">
+		<div class="nav_menu">
+			<nav>
+				<div class="pull-left img_box">
+					<a href="/index.html"><img src="../img/logo.png"> </a>
+				</div>
+				<div class="sidebar-toggle-box">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="function_menu pull-left">
+					<ul class="nav pull-left">
+						<li><a href="/index"><span
+								class="icon fa-plus-xiaoFangPng"></span>
+								<div>SeeU</div> </a>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="javascript:;"
+						class="user-profile dropdown-toggle" data-toggle="dropdown"
+						aria-expanded="false"> <i class="fa fa-user"></i> 管理员 <span
+							class=" fa fa-angle-down"></span> </a>
+						<ul class="dropdown-menu dropdown-usermenu pull-right">
+							<li><a href="/user/details"> 用户信息</a>
+							</li>
+					</li>
+					<li><a href="javascript:;">帮助</a>
+					</li>
+					<li><a href="login.html"><i
+							class="fa fa-sign-out pull-right"></i> 退出系统</a>
+					</li>
+				</ul>
+				</li>
+				<li class="data_preview"><a href="/index"> <i
+						class="fa fa-bar-chart"></i>数据概览 </a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="content_x">
+		<!-- 左菜单 -->
+		<div class="nav-collapse " id="sidebar" tabindex="0" style="overflow: hidden; outline: none;">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+            	<li><a href="../library/library_list.html"> <i class="fa fa-book"></i> <span>我的图书馆</span></a></li>
+				<li class="sub-menu"><a href="javascript:;" class="dcjq-parent active"> <i class="fa fa-clipboard"></i> <span>我的社会</span></a>
+					<ul class="sub" style="display: display">
+						<li><a href="people_list.html">人</a>
+						</li>
+						<li><a href="setup_list.html">体制</a>
+						</li>
+						<li><a href="thing_list.html">事</a>
+						</li>
+						<li><a href="substance_list.html">物</a>
+						</li>
+						<li><a href="diary_list.html">日记</a>
+						</li>
+					</ul>
+				</li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+		<!--右内容 -->
+		<div class="right_col">
+			<div class="padding_20">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<div class="s_panel text-left">
+								<!-- 内容标题 -->
+								<div class="x_top clearfix">
+									<div class="font-left">
+										<h5>用户信息列表</h5>
+									</div>
+									<div class="pull-right font_black">
+										<i class="fa fa-sign-in "></i><a href="#">导出</a>
+									</div>
+								</div>
+								<!-- 内容标题结束 -->
+								<div class="s_content">
+										<table class="table table-hover text-center">
+											<thead>
+												<tr class="active">
+													<th style="display:none">id</th>
+													<th>图片</th>
+													<th>名称</th>
+													<th>性质</th>
+													<th>规模</th>
+													<th>时间</th>
+													<th>地址</th>
+													<th>详情</th>
+												</tr>
+											</thead>
+											<tbody id="setup_list">
+											</tbody>
+										</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</body>
+<!-- jQuery -->
+<script src="../js/jquery-1.11.1.min.js"></script>
+<!-- highcharts -->
+<script type="text/javascript" src="../js/highstock.js"></script>
+<script type="text/javascript" src="../js/highcharts-zh_CN.js"></script>
+<script type="text/javascript" src="../js/exporting.js"></script>
+<!-- 手机端-->
+<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
+<!-- Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- 滚动条-->
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/jquery.scrollTo.min.js"></script>
+<!-- NProgress -->
+<script type="text/javascript" src="../js/nprogress.js"></script>
+<!-- toastr -->
+<script type="text/javascript" src="../js/toastr.js"></script>
+<script type="text/javascript" src="../js/statistics.js"></script>
+<!-- 弹窗框  -->
+<script type="text/javascript" src="../js/layer.js"></script>
+<script type="text/javascript" src="../js/style.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
+<script type="text/javascript" src="../js/message.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//json生成表格
+	var jsonData = 
+	[{'id':'1','img':'../img/setup/b7d54b53-6e43-41e6-a7a6-cf1995adc179.jpg','name':'中京消安','property':'智慧城市',
+		'scope':'20-99',
+		'time':'2011--？',
+		'address':'星河worldA栋11楼',
+		'details':'<li>老板<ul><li>霍春望</li></ul></li>'+
+				  '<img class="list_icon" src="../../img/b7d54b53-6e43-41e6-a7a6-cf1995adc179.jpg" style="height:123.6px;width:200px;">'+
+				  '<img class="list_icon" src="../../img/b7d54b53-6e43-41e6-a7a6-cf1995adc179.jpg" style="height:123.6px;width:200px;">'+
+				  '<img class="list_icon" src="../../img/b7d54b53-6e43-41e6-a7a6-cf1995adc179.jpg" style="height:123.6px;width:200px;">'}];
+	var tr = '';
+	for(var i=0;i<jsonData.length;i++){
+		tr = tr + '<tr>';
+		tr = tr + '<td style="display:none">'+jsonData[i].id+'</td>';
+		tr = tr + '<td><img class="list_icon" src="'+jsonData[i].img+'" style="height:61.8px;width:100px;"><img class="img_show" src="'+jsonData[i].img+'" width="100%" style="display: none;"></td>';
+		tr = tr + '<td style="color:red">'+jsonData[i].name+'</td>';
+		tr = tr + '<td>'+jsonData[i].property+'</td>';
+		tr = tr + '<td>'+jsonData[i].scope+'</td>';
+		tr = tr + '<td>'+jsonData[i].time+'</td>';
+		tr = tr + '<td>'+jsonData[i].address+'</td>';
+		tr = tr + '<td><a class="details"><i class="fa fa-sign-in"></i><div style="display:none">'+jsonData[i].details+'</div></a></td>';
+		tr = tr + '</tr>';
+		<!-- alert(jsonData[i].name); -->
+	}
+	$("#setup_list").append(tr) ; 
+	//表格点击事件
+	$('table tr').click(function() {
+		$('table tr').each(function() {
+			$(this).removeClass("success");
+		});
+		$(this).addClass("success");
+	});
+	// 点击图片变大图
+	$('.list_icon').each(function(index) {
+		$(this).on("click", function() {
+			layer.open({
+				type : 1,
+				title : false,
+				closeBtn : 0,
+				area : '800px',
+				skin : 'layui-layer-nobg', // 没有背景色
+				shadeClose : true,
+				content : $(".img_show").eq(index)
+			});
+		});
+	});
+	//详情隐藏与显示
+	$('.details').each(function(index) {
+		$(this).on("mouseover", function() {
+			var div = '<div style="width: 516px;height：100%">'+$(this).find(' > div').html()+'</div>'
+			layer.open({
+				type : 1,
+				title : false,
+				closeBtn : 0,
+				area : '521px',
+				skin : 'layui-layer-black', // 没有背景色
+				shadeClose : true,
+				content : div
+			});
+		});
+	});
+})
+</script>
+</html>

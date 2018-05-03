@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+</head>
+<body>	
+        <div id="sidebar"  class="nav-collapse " th:fragment="menu">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+<!--             	<div th:each="obj:${menu}"> -->
+<!--             		<li th:if="${obj.haschild == '0' and obj.hasparent == '0'}"> -->
+<!-- 	            		<a th:href="${obj.menuUrl}"> -->
+<!-- 	                        <i th:class="${obj.meunIcon}"></i> -->
+<!-- 	                        <span th:text="${obj.menuName}"></span> -->
+<!-- 	                    </a> -->
+<!-- 	            	</li> -->
+<!-- 	            	<li class="sub-menu" th:if="${obj.haschild == '1'}"> -->
+<!-- 	            		<a href="javascript:;" th:class="${menu}==${obj.menuUrl}? 'dcjq-parent active '"> -->
+<!-- 	                        <i th:class="${obj.meunIcon}"></i> -->
+<!-- 	                        <span th:text="${obj.menuName}"></span> -->
+<!-- 	                    </a> -->
+<!-- 	                    <ul class="sub" th:style="${menu}==${obj.menuUrl}?'display: block'"> -->
+<!-- 	                      	<li th:each="child:${menu}"> -->
+<!-- 	                      		<a th:href="${child.menuUrl}" th:if="${child.parentId} == ${obj.rightId}"> -->
+<!-- 	                      			<span th:text="${child.menuName}"></span> -->
+<!-- 	                      		</a> -->
+<!-- 	                      	</li> -->
+<!-- 	                    </ul> -->
+<!-- 	            	</li> -->
+ 
+ 
+ 
+                <li>
+                    <a  th:href="@{/build/list}"  >
+                        <i class="fa fa-building"></i>
+                        <span>建筑管理</span>
+                    </a>
+                </li>
+                
+                 <li>
+                    <a  th:href="@{/unit/list}"  >
+                        <i class="fa fa-home"></i>
+                        <span>单位管理</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                <a href="javascript:;" th:class="${menu}=='work'? 'dcjq-parent active '" > 
+                        <i class="fa fa-clipboard"></i>
+                        <span>工作管理</span>
+                    </a>
+                    <ul class="sub"  th:style="${menu}=='work'?'display: block'">
+                      <li><a th:href="@{/work/day}" >每日巡查</a></li>
+                      <li><a th:href="@{/work/month}">每月检查</a></li>
+                      <li><a th:href="@{/work/control}">控制室检查</a></li>
+                      <li><a th:href="@{/work/electronicpatrol}">电子巡更</a></li>
+                    </ul>
+                </li>
+
+               
+              
+                <li>
+                    <a  th:href="@{/employee/list}">
+                        <i class="fa fa-user-plus"></i>
+                        <span>员工管理</span>
+                    </a>
+                </li>
+
+ 					<li>
+                    <a  th:href="@{/employeecheck/list}"  >
+                        <i class="fa fa-graduation-cap"></i>
+                        <span>员工考核</span>
+                    </a>
+                </li>
+             
+             		<li>
+                    <a  th:href="@{/firecontrolinstrumentation/list}"  >
+                        <i class="fa fa-sitemap"></i>
+                        <span>消防物联</span>
+                    </a>
+                </li>
+					
+					<li>
+                    <a  th:href="@{/label/list}"  >
+                        <i class="fa fa-tags"></i>
+                        <span>标签管理</span>
+                    </a>
+                </li>
+                
+                	 <li class="sub-menu ">
+                   <a href="javascript:;" th:class="${menu}=='fireknow'? 'dcjq-parent active'" > 
+         
+                        <i class="fa fa-book"></i>
+                        <span>消防知识</span>
+                    </a>
+                    <ul class="sub" th:style="${menu}=='fireknow'?'display: block'">
+                      <li><a th:href="@{/lawsregulations/list}">法律法规</a></li>
+                    <li><a th:href="@{/propagandatraining/list}">宣传培训</a></li>
+                    </ul>
+                </li>
+
+
+                
+                	<li>
+                    <a  th:href="@{/managementinformation/list}" >
+                        <i class="fa fa-life-ring"></i>
+                        <span>管理处信息</span>
+                    </a>
+                </li>
+				
+				
+				<li>
+                    <a  th:href="@{/firepoliceforce/list}">
+                        <i class="fa fa-shield"></i>
+                        <span>消防警力</span>
+                    </a>
+                </li>
+                
+				<li>
+                    <a  th:href="@{/user/list}">
+                        <i class="fa fa-users"></i>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+				
+				<li>
+                    <a  th:href="@{/role/list}">
+                        <i class="fa fa-user"></i>
+                        <span>角色管理</span>
+                    </a>
+                </li>
+				
+				<li>
+                    <a  th:href="@{/right/list}">
+                        <i class="fa fa-lock"></i>
+                        <span>权限管理</span>
+                    </a>
+                </li>
+				
+				<li>
+                    <a  th:href="@{/group/list}" >
+                        <i class="fa fa-tags"></i>
+                        <span>组管理</span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+ 
+</body>
+</html>

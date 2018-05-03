@@ -1,0 +1,122 @@
+body,div,span,a,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,img,input,button,header,nav,section,article,sidebar,aside,footer,figure,figcaption,hgroup,video,audio,i,em,strong,select,option{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-style: normal;
+}
+body{
+    color: #7b7b7b;
+    font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/
+    font-family: -apple-system, "SF UI Text", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+    line-height: 1;
+    font-weight: normal;
+    -ms-overflow-style:none; /*隐藏滚动条*/
+    overflow:-moz-scrollbars-none;/*隐藏滚动条*/
+}
+html::-webkit-scrollbar{width:0px}/*隐藏滚动条*/
+a{
+    color: #7b7b7b;
+    text-decoration: none;
+    font-size: .16rem;
+}
+a:hover{
+    color: #7b7b7b;
+    text-decoration: none;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    padding: 0 13.1% 0 10.4%;
+}
+.leftIcon{
+    float: left;
+    width: 46%;
+    padding-top: 15%;
+}
+.rightBox{
+    float: right;
+    width: 38%;
+    height: 70%;
+    background: url("../img/loginBox_bg.png") no-repeat left top;
+    background-size: 100% 100%;
+    padding: 6% 5%;
+    text-align: center;
+    margin-top: 9%;
+}
+.rightBox .title{
+    margin: 5% 0 14%;
+}
+.rightBox>input{
+    width: 90%;
+    height: 10%;
+    margin-bottom: 8%;
+    padding-left: 14%;
+}
+.UserID{
+    background: url("../img/UserID_n.png") no-repeat left top;
+    background-size: 100% 100%;
+}
+.PassWord{
+    background: url("../img/PassWord_n.png") no-repeat left top;
+    background-size: 100% 100%;
+
+}
+.chooses{
+    overflow: hidden;
+    padding: 0 8% 12%;
+}
+.remember{
+    float: left;
+}
+.chooses span{
+    float: left;
+    font-size: .16rem;
+    margin-left: 4px;
+}
+.forget{
+    float: right;
+}
+@media screen and (max-width:800px){
+    .chooses span{
+        font-size: .14rem;
+    }
+    .forget{
+        font-size: .14rem;
+    }
+}
+@media screen and (max-width:700px){
+    .chooses span{
+        font-size: .12rem;
+        margin-left: 2px;
+    }
+    .forget{
+        font-size: .12rem;
+    }
+}
+@media screen and (max-width:650px){
+    .forget{
+        display: none;
+    }
+}
+@media screen and (max-width:350px){
+    .remember{
+        display: none;
+    }
+    .chooses span{
+        display: none;
+    }
+}
+.LoginBtn{
+    width: 90%;
+    height: 12%;
+    background: url("../img/LoginBtn_n.png") no-repeat left top;
+    background-size: 100% 100%;
+    margin-bottom: 5%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="UTF-8"></meta>
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="content_t">
+			<div class="nav_menu">
+				<nav>
+			
+					<div class="pull-left img_box">					
+						<a href="/index.html"><img src="../img/logo.png"> </a>
+					</div>
+	<div class="sidebar-toggle-box">
+              <i class="fa fa-bars"></i>
+          </div>
+					<div class="function_menu pull-left">
+						<ul class="nav pull-left">
+							<li><a th:href="@{/index}"><span class="icon fa-plus-xiaoFangPng"></span>
+									<div>消防应用</div> </a></li>
+							<!-- <li><a href="#"><span class="icon fa-plus-chengGuanPng "></span>
+									<div>城管应用</div> </a>
+							</li>
+							<li><a href="#"><span
+									class="icon fa-plus-chenganJianPng"></span>
+									<div>安监应用</div> </a>
+							</li>
+							<li><a href="#"><span class="icon fa-plus-zhiAnPng "></span>
+									<div>治安应用</div> </a>
+							</li> -->
+
+						</ul>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="javascript:;"
+							class="user-profile dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"> <i class="fa fa-user"></i> 管理员 <span
+								class=" fa fa-angle-down"></span> </a>
+							<ul class="dropdown-menu dropdown-usermenu pull-right">
+								<li><a href="/user/details"> 用户信息</a></li>
+						
+								</li>
+								<li><a href="javascript:;">帮助</a></li>
+								<li><a href="login.html"><i
+										class="fa fa-sign-out pull-right"></i> 退出系统</a></li>
+							</ul>
+						</li>
+
+						<li class="data_preview"><a href="/index"> <i
+								class="fa fa-bar-chart"></i>数据概览 </a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

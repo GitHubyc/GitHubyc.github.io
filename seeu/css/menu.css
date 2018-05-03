@@ -1,0 +1,151 @@
+/*
+
+.profile_pic {
+    width: 35%;
+    float: left;
+}
+.img-circle,.profile_img {
+    width: 70%;
+    margin-left: 15%;
+    z-index: 1000;
+    position: inherit;
+    margin-top: 20px;
+   border:4px solid #3385ff;
+}
+
+.profile_info {
+    width: 65%;
+	*width: 53%;
+    float: left;
+    padding: 25px 15px 10px 10px;
+	*padding: 25px 10px 10px 10px\9;
+	*padding-top:50px;
+	*padding-bottom:20px;
+}
+.profile_info span {
+    font-size: 13px;
+    line-height: 30px;
+    color: white;
+}
+.profile_info h2 {
+    font-size: 14px;
+    color: #3385ff;
+    margin: 0;
+	line-height:16px;
+    font-weight: 300;
+	overflow:hidden;
+	height:16px;
+}
+
+.profile {
+	background-color:#303946;
+	padding:10px 0;
+	
+}
+
+ .menu_section>ul {
+	margin:0px;
+	padding:0px;
+}
+.side-menu>li {
+    position: relative;
+    cursor: pointer;
+    *line-height:14px;
+}
+.scroll-view{
+    position: relative;
+
+}
+
+.scroll-view::-webkit-scrollbar,.scroll-view  scrollbar[orient="vertical"] {
+      width: 0px;   
+    }
+.menu_section a{
+    color: #9da5aa;
+    font-weight: 500;
+}
+.side-menu>li>a>span,.side-menu>li>a>i{
+	font-size:1.8rem;
+	font-size:18px\9;
+}
+.side-menu>li>a>.right_fa{
+	*margin-top:-34px;
+}
+.menu_section .blue_bg{
+		background-color:#3385ff;
+		color:white;
+}
+.side-menu>li>a:hover,.side-menu>li>a:focus{
+	color:white;
+	background-color:#3385ff;
+} */
+
+.content_x .left_col{
+	    background: white;
+}
+
+.pad_15{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.menu_section a {
+	    color: black;
+}
+.pad_15{
+	 border-bottom: 1px solid #ececec;
+}
+.side-menu>li>a{
+	padding: 17px 15px 16px 15px;
+    border-bottom: 1px solid #ececec;
+   
+}
+.right_top{
+    z-index: 99;
+    margin-left:2px; 	
+}
+
+.side-menu .menu_text{
+	line-height: 26px;
+    height: 26px;
+    margin-left: 26px;
+    font-size: 14px;
+    font-style:normal
+}
+
+.side-menu .right_fa {
+    line-height: 26px;
+}
+
+.side-menu>li>a:hover,.side-menu>li>a:focus{
+	color:black;
+	background-color:white;
+}
+.child_menu{
+	background-color:#ecf0f6;
+}
+.left_col{
+box-shadow: 3px 5px 7px #c5c5c5;
+}
+.child_menu li a {
+	color:#959595;
+     text-indent: 0px; 
+     background: url(../img/erji.png) 20px 10px no-repeat;
+}
+
+.child_menu em{
+
+    margin-left: 52px;
+    font-size: 14px;
+    font-style:normal
+}
+
+.child_menu li a:hover{
+	background-color:#ecf0f6;
+	color: #3385ff;
+	 background: url(../img/erji2.png) 20px 10px no-repeat;
+}
+.menu_section .blue_bg {
+  background-color:#ecf0f6;
+	color: #3385ff;
+ background: url(../img/erji2.png) 20px 10px no-repeat;
+}
