@@ -1,10 +1,10 @@
 function carouselImg(){
 	var imgJson = 
-		[{'img':'img/test1.jpg'},
-		 {'img':'img/test2.jpg'},
-		 {'img':'img/test3.jpg'},
-		 {'img':'img/test4.jpg'},
-		 {'img':'img/test5.jpg'}];
+		[{'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
+		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
+		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
+		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
+		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'}];
 		var li = '';
 		for(var i=0;i<imgJson.length;i++){
 			li = li + '<li><a href="#"><img src="'+imgJson[i].img+'" class="imgs" width="830px" height="350px" alt="puss in boots1"></a></li>';
