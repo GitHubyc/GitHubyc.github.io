@@ -1,8 +1,8 @@
 function carouselImg(){
 	var imgJson = 
-		[{'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
-		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
-		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
+		[{'img':'img/index/File0000016135.jpg'},
+		 {'img':'img/index/File0000016238.jpg'},
+		 {'img':'img/index/File0000016249.jpg'},
 		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'},
 		 {'img':'http://e.hiphotos.baidu.com/zhidao/pic/item/71cf3bc79f3df8dc7520a965c611728b47102820.jpg'}];
 		var li = '';
