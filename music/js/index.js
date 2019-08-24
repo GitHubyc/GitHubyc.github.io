@@ -70,7 +70,7 @@ $().ready(function ()
             $myCon.text(songsList[songsListIndex % songsList.length].title + "-" + songsList[songsListIndex % songsList.length].artist);
         }
         else
-            $myCon.text("error");
+            $myCon.text("TAKE ME TO YOUR HEART");
     }, false);
 });
 
@@ -286,8 +286,8 @@ Number.prototype.toPercent = function(n)
 var songsList =
 [
     {
-        "title" : "有梦好甜蜜(口琴变奏)",
-        "artist" : "渠成",
+        "title" : "TAKE ME TO YOUR HEART",
+        "artist" : "袁铖",
         "coverURL" : "",
         "musicURL" : "music/Take me to your heart.m4a"
     }
