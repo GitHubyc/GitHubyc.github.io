@@ -23,13 +23,33 @@ var songsListIndex;//the index of song in the songslist
 var playMode;//list shuffle loop
 var shuffleIndex;
 var shuffleIndexCount;
+/*^_^-------------------------songs list--------------------------^_^*/
+var songsList =
+[
+    {
+		"id" : "2019082401",
+        "title" : "TAKE ME TO YOUR HEART",
+        "artist" : "袁铖",
+        "coverURL" : "",
+        "musicURL" : "music/Take me to your heart.m4a"
+    },
+	{
+		"id" : "2019082402",
+        "title" : "张韶涵 - 淋雨一直走",
+        "artist" : "袁铖",
+        "coverURL" : "",
+        "musicURL" : "music/张韶涵 - 淋雨一直走.mp3"
+    }
+]
 
-$().ready(function ()
-{
+$(document).ready(function () {
     init();
     for(var i = 0; i < songsList.length; i++)
     {
-        songsList[i].musicURL = encodeURI(songsList[i].musicURL);
+        if(GetQueryString("id")==songsList[i].id){
+			songsList[i].musicURL = encodeURI(songsList[i].musicURL);
+			songsListIndex=i;
+		}
     }
     myAudio.src = decodeURI(songsList[songsListIndex].musicURL);
     /*^_^------------------some event listeners-------------------^_^*/
@@ -60,6 +80,9 @@ $().ready(function ()
     myAudio.addEventListener("timeupdate", function ()
     {
         var $myCon = $("#myConsole");
+		if(songsListIndex!=null&&songsListIndex!=''){
+			$myCon.text(songsList[songsListIndex].title + "-" + songsList[songsListIndex].artist);
+		}
         if (!isNaN(myAudio.duration))
         {
             var progressValue = myAudio.currentTime/myAudio.duration;
@@ -67,13 +90,41 @@ $().ready(function ()
                 return;//confrim the controllerArm can be rotated immediately
             iStartDeg = -95 - 25 * progressValue;
             controllArm.style.transform = "rotate(" + iStartDeg +"deg)";
-            $myCon.text(songsList[songsListIndex % songsList.length].title + "-" + songsList[songsListIndex % songsList.length].artist);
+            $myCon.text(songsList[songsListIndex].title + "-" + songsList[songsListIndex].artist);
         }
-        else
-            $myCon.text("TAKE ME TO YOUR HEART");
     }, false);
 });
-
+function init()
+{
+    initComponents();
+    initEventClick();
+}
+function initComponents()
+{
+    $playBtn = $("#playBtn");
+    $pauseBtn = $("#pauseBtn");
+    $nextBtn = $("#nextBtn");
+    $preBtn = $("#preBtn");
+    $stopBtn = $("#stopBtn");
+    $muteBtn = $("#muteBtn");
+    $firstBtn = $("#firstBtn");
+    $lastBtn = $("#lastBtn");
+    $shuffleMode = $("#shuffleMode");
+    $listMode = $("#listMode");
+    $loopMode = $("#loopMode");
+    myAudio = $("#myAudio")[0];
+    controllArm = $("#cdControllerArm")[0];
+    $cdCover = $("#cdCover");
+    iStartDeg = -95;
+    iEndDeg = -120;
+    iIncrement = 25;
+    songsListIndex = 0;//the index of song in the songslist
+    playMode = "list";//list shuffle loop
+    $("#listMode").css({"color":"#e74d3c"});
+    shuffleIndex = [];
+    shuffleIndexCount = songsList.length - 1;
+    initShuffleGenerator();
+}
 function initEventClick()
 {
     /*^_^------------------some click events-------------------^_^*/
@@ -168,45 +219,12 @@ function initEventClick()
     );
 }
 
-function initComponents()
-{
-    $playBtn = $("#playBtn");
-    $pauseBtn = $("#pauseBtn");
-    $nextBtn = $("#nextBtn");
-    $preBtn = $("#preBtn");
-    $stopBtn = $("#stopBtn");
-    $muteBtn = $("#muteBtn");
-    $firstBtn = $("#firstBtn");
-    $lastBtn = $("#lastBtn");
-    $shuffleMode = $("#shuffleMode");
-    $listMode = $("#listMode");
-    $loopMode = $("#loopMode");
-    myAudio = $("#myAudio")[0];
-    controllArm = $("#cdControllerArm")[0];
-    $cdCover = $("#cdCover");
-    iStartDeg = -95;
-    iEndDeg = -120;
-    iIncrement = 25;
-    songsListIndex = 0;//the index of song in the songslist
-    playMode = "list";//list shuffle loop
-    $("#listMode").css({"color":"#e74d3c"});
-    shuffleIndex = [];
-    shuffleIndexCount = songsList.length - 1;
-    initShuffleGenerator();
-}
-
 function initShuffleGenerator()
 {
     for(var i = 0; i < songsList.length; i++)
     {
         shuffleIndex[i] = i;
     }
-}
-
-function init()
-{
-    initComponents();
-    initEventClick();
 }
 
 /*^_^------------------some core functions-------------------^_^*/
@@ -240,26 +258,23 @@ function changeSong(whatDirection)
                 $cdCover.addClass("cdStart");
             controllArm.style.transform = "rotate(-130deg)"
             if (whatDirection == "pre") {
+				console.log(songsListIndex)
                 songsListIndex--;
                 if (songsListIndex <= -1)
-                    songsListIndex = songsList.length;
+                    songsListIndex = songsList.length-1;
             }
             else if (whatDirection == "next") {
                 songsListIndex++;
-                if (songsListIndex >= songsList.length + 1)
+                if (songsListIndex >= songsList.length)
                     songsListIndex = 0;
             }
             else if (whatDirection == "first") {
                 songsListIndex = 0;
             }
-            else if(whatDirection == "last")
-            {
-//                alert(songsList.length);
+            else if(whatDirection == "last"){
                 songsListIndex = songsList.length - 1;
-//                alert(songsListIndex);
             }
-            else
-            {
+            else{
             }
             myAudio.src = decodeURI(songsList[songsListIndex].musicURL);
             myAudio.load();
@@ -281,14 +296,13 @@ Number.prototype.toPercent = function(n)
     n = n || 2;
     return ( Math.round( this * Math.pow( 10, n + 2 ) ) / Math.pow( 10, n ) ).toFixed( n ) + '%';
 };
-
-/*^_^-------------------------songs list--------------------------^_^*/
-var songsList =
-[
-    {
-        "title" : "TAKE ME TO YOUR HEART",
-        "artist" : "袁铖",
-        "coverURL" : "",
-        "musicURL" : "music/Take me to your heart.m4a"
-    }
-]
+function GetQueryString(name) { 
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+		var context = ""; 
+		if (r != null) 
+			context = r[2]; 
+		reg = null; 
+		r = null; 
+		return context == null || context == "" || context == "undefined" ? "" : context; 
+	}
