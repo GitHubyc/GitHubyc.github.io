@@ -507,6 +507,15 @@
 	color:white;
 }
     </style>
+<link href="//cdn.bootcss.com/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.js"></script>
+<script src="//cdn.bootcss.com/markdown-it/4.4.0/markdown-it.min.js"></script>
+<script>
+  window.searchMap = location.search.substr(1).split('&').reduce(function(r, it) {
+    var them = it.split('='); r[them[0]] = them[1]; return r;
+  }, {});
+  $.ajaxSetup({async: false});
+</script>
 
 </head>
 <body id="by">
@@ -556,9 +565,10 @@
 <!--<div id="test-editormd">
     <textarea style="display:none;" id="ts"></textarea>
 </div>-->
-<div class="div_menu">
+<!--<div class="div_menu">
      <iframe src="aboutme.md" frameBorder="0" width="90%"></iframe>
-</div>
+</div>-->
+<div class="markdown-html"><script>$.get(searchMap.md, function(text) { document.write(markdownit().render(text)); });</script></div>
 </body>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
 <!-- jQuery -->
